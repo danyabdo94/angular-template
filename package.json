@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-prod": "git add --all && git commit --all && npm version patch && node ./replace.build.js && ng build --prod --aot  ",
+    "build-prod-patch": "git add --all && git commit --all && npm version patch && node ./replace.build.js && ng build --prod --aot  ",
+    "build-prod-minor": "git add --all && git commit --all && npm version minor && node ./replace.build.js && ng build --prod --aot  ",
+    "build-prod-major": "git add --all && git commit --all && npm version major && node ./replace.build.js && ng build --prod --aot  "
   },
   "private": true,
   "dependencies": {
