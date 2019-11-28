@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment";
 @Injectable()
@@ -10,8 +9,12 @@ export class ParentService {
   getApiroot() {
     return this.apiRoot;
   }
+
   baseUrl(versionNumber) {
     return this.apiRoot + "v" + versionNumber + "/";
   }
 
+  fakeCall(versionNumber) {
+    return this.http.get(this.apiRoot + "v" + versionNumber + "/whatever");
+  }
 }

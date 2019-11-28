@@ -119,6 +119,41 @@
           }
         }
       }
+    },
+    "ticketing": {
+      "projectType": "library",
+      "root": "projects/ticketing",
+      "sourceRoot": "projects/ticketing/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ticketing/tsconfig.lib.json",
+            "project": "projects/ticketing/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ticketing/src/test.ts",
+            "tsConfig": "projects/ticketing/tsconfig.spec.json",
+            "karmaConfig": "projects/ticketing/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ticketing/tsconfig.lib.json",
+              "projects/ticketing/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "template"
 }

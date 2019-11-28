@@ -12,7 +12,7 @@ import { Router } from "@angular/router";
 import { tap, finalize } from "rxjs/operators";
 import { PasserService } from "../passer.service";
 import { ParentService } from "../parent.service";
-import { AuthService } from "./auth-service";
+import { AuthService } from "../../modules/authentication/services/auth-service";
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -62,7 +62,6 @@ export class ErrorInterceptor implements HttpInterceptor {
         }
       ),
       finalize(() => {
-        console.log(req);
         this.passerService.publishLoading(false);
       })
     );

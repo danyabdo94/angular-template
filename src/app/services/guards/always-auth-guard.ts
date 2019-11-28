@@ -4,7 +4,7 @@ import {
   ActivatedRouteSnapshot,
   CanActivate
 } from "@angular/router";
-import { AuthService } from "../auth/auth-service";
+import { AuthService } from "../../modules/authentication/services/auth-service";
 import { Injectable } from "@angular/core";
 import { PasserService } from "../passer.service";
 
